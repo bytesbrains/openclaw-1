@@ -9358,7 +9358,7 @@ describe("update-cli", () => {
       }
       if (legacyConfigChange) {
         const warning =
-          "Candidate Doctor changed keys meta, plugins, wizard; promotion receipts unavailable for this candidate version.";
+          "Doctor changed config keys meta, plugins, wizard during update checks. Check those settings after the update; this version cannot verify that they were applied.";
         expect(record?.steps).toContainEqual(
           expect.objectContaining({
             step: expect.stringMatching(/^warning:/),
