@@ -10,17 +10,17 @@ read_when:
 many model providers. OpenClaw holds only a `cru_` key; provider credentials, project budgets, and
 the cost ledger stay on Cruise.
 
-| Property        | Value                                                              |
-| --------------- | ------------------------------------------------------------------ |
-| Provider id     | `cruise`                                                           |
-| Plugin          | community package (`@bytesbrains/openclaw-cruise-provider`)        |
-| Source / recipe | [bytesbrains/openclaw-cruise](https://github.com/bytesbrains/openclaw-cruise) |
-| Auth env var    | `CRUISE_API_KEY`                                                   |
-| Onboarding flag | `--auth-choice cruise-api-key`                                     |
-| Direct CLI flag | `--cruise-api-key <key>`                                           |
-| API             | OpenAI-compatible (`openai-completions`)                           |
+| Property        | Value                                                                                |
+| --------------- | ------------------------------------------------------------------------------------ |
+| Provider id     | `cruise`                                                                             |
+| Plugin          | community package (`@bytesbrains/openclaw-cruise-provider`)                          |
+| Source / recipe | [bytesbrains/openclaw-cruise](https://github.com/bytesbrains/openclaw-cruise)        |
+| Auth env var    | `CRUISE_API_KEY`                                                                     |
+| Onboarding flag | `--auth-choice cruise-api-key`                                                       |
+| Direct CLI flag | `--cruise-api-key <key>`                                                             |
+| API             | OpenAI-compatible (`openai-completions`)                                             |
 | Base URL        | `https://cruise.bytesbrains.net/v1` (demo: `https://cruise-demo.bytesbrains.net/v1`) |
-| Default model   | `cruise/bb/agentic-coding` (a Cruise **lane**)                     |
+| Default model   | `cruise/bb/agentic-coding` (a Cruise **lane**)                                       |
 
 ## Install plugin
 
