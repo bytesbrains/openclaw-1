@@ -58,6 +58,7 @@ type ManagedCommandOptions = {
 type RunManagedCommandOptions = ManagedCommandOptions & {
   timeoutMs?: number;
   timeoutKillGraceMs?: number;
+  signalKillGraceMs?: number;
   timeoutForceKillOnLeaderExit?: boolean;
   requireProcessTreeExit?: boolean;
   runTaskkill?: TaskkillRunner;
@@ -327,6 +328,7 @@ export async function runManagedCommand({
   platform = process.platform,
   timeoutMs,
   timeoutKillGraceMs,
+  signalKillGraceMs,
   timeoutForceKillOnLeaderExit = false,
   requireProcessTreeExit = false,
   runTaskkill = spawnSync,
@@ -422,7 +424,7 @@ export async function runManagedCommand({
   };
   const forwardSignal = (received: NodeJS.Signals) => {
     onSignal?.(received);
-    void stop({ type: "signal", signal: received }, received);
+    void stop({ type: "signal", signal: received }, received, signalKillGraceMs);
   };
   const abort = () => {
     void stop({ type: "aborted" }, "SIGTERM", abortKillGraceMs);
