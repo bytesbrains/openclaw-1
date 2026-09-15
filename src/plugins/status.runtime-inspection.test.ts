@@ -824,6 +824,8 @@ it("retires runtime diagnostics after each actual chat inspect reply", async () 
     const errorCodes = [
       "ERR_SQLITE_ERROR",
       "ERR_INVALID_STATE",
+      "STATE_DATABASE_READ_ADMISSION_INVALIDATED",
+      "PLUGIN_CACHE_FACT_INVALIDATED",
       "EACCES",
       "EPERM",
       "ENOENT",
